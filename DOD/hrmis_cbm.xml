@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="hrmis_cbm" nm="hrmis" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>D:\HR 2013\DB Structure</DocFolder>
+  <Sch Cm="" nm="dbo">
+    <Tbl UsSo="1" nm="hr_d_employee_company">
+      <TblOpts/>
+      <Pk ClNs="hr_d_employee_companyId" nm="pkhr_d_employee_company"/>
+      <Cl au="1" df="" nm="hr_d_employee_companyId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_companyId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_employeeId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_emp_statId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_divisiId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_departmentId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tgl_masuk" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tgl_keluar" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="1" nm="active" nu="0">
+        <DT arr="0" ds="Bit" en="" id="-7" ln="1" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_d_employee_company_hr_m_company" prLkCl="hr_m_companyId" upAc="3">
+        <PrTb mn="0" nm="hr_m_company" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_company" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_companyId" prCl="hr_m_companyId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_d_employee_company_hr_m_department" prLkCl="hr_m_departmentId" upAc="3">
+        <PrTb mn="0" nm="hr_m_department" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_company" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_departmentId" prCl="hr_m_departmentId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_d_employee_company_hr_m_divisi" prLkCl="hr_m_divisiId" upAc="3">
+        <PrTb mn="0" nm="hr_m_divisi" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_company" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_divisiId" prCl="hr_m_divisiId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_d_employee_company_hr_m_emp_stat" prLkCl="hr_m_emp_statId" upAc="3">
+        <PrTb mn="0" nm="hr_m_emp_stat" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_company" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_emp_statId" prCl="hr_m_emp_statId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_d_employee_company_hr_m_employee" prLkCl="hr_m_employeeId" upAc="3">
+        <PrTb mn="0" nm="hr_m_employee" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_company" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_employeeId" prCl="hr_m_employeeId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_d_employee_experient">
+      <TblOpts/>
+      <Pk ClNs="hr_d_employee_experientId" nm="pkhr_d_employee_experient"/>
+      <Cl au="0" df="" nm="hr_d_employee_experientId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_employeeId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="company" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="alamat" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="250" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="start" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="finish" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="jabatan" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_d_employee_experient_hr_m_employee" prLkCl="hr_m_employeeId" upAc="3">
+        <PrTb mn="0" nm="hr_m_employee" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_experient" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_employeeId" prCl="hr_m_employeeId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_d_employee_family">
+      <TblOpts/>
+      <Pk ClNs="hr_d_employee_familyId" nm="pkhr_d_employee_family"/>
+      <Cl au="0" df="" nm="hr_d_employee_familyId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_employeeId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_familyId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="name" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tgl_lahir" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tmp_lahir" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="alamat" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="250" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="kota" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="zip" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="5" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="propinsi" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="negara" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="mobile" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="telepone" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_d_employee_family_hr_m_employee" prLkCl="hr_m_employeeId" upAc="3">
+        <PrTb mn="0" nm="hr_m_employee" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_family" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_employeeId" prCl="hr_m_employeeId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_d_employee_family_hr_m_family" prLkCl="hr_m_familyId" upAc="3">
+        <PrTb mn="0" nm="hr_m_family" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_family" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_familyId" prCl="hr_m_familyId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_d_employee_potongan">
+      <TblOpts/>
+      <Pk ClNs="hr_d_employee_potonganId" nm="pkhr_d_employee_potongan"/>
+      <Cl au="0" df="" nm="hr_d_employee_potonganId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_employeeId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="spn" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="pph" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="jamsostek" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="askes" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="koperasi" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="haritua" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="lainlain" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_d_employee_potongan_hr_m_employee" prLkCl="hr_m_employeeId" upAc="3">
+        <PrTb mn="0" nm="hr_m_employee" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_potongan" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_employeeId" prCl="hr_m_employeeId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_d_employee_salary">
+      <TblOpts/>
+      <Pk ClNs="hr_d_employee_salaryId" nm="pkhr_d_employee_salary"/>
+      <Cl au="0" df="" nm="hr_d_employee_salaryId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_employeeId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="pokok" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="jabatan" nu="0">
+        <DT arr="0" ds="Money" en="" id="701" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="perumahan" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="kehadiran" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="makan" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="transportasi" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_d_employee_salary_hr_m_employee" prLkCl="hr_m_employeeId" upAc="3">
+        <PrTb mn="0" nm="hr_m_employee" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_d_employee_salary" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_employeeId" prCl="hr_m_employeeId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_company">
+      <TblOpts/>
+      <Pk ClNs="hr_m_companyId" nm="pkhr_m_company"/>
+      <Cl au="1" df="" nm="hr_m_companyId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nama" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="200" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="alamat" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="200" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_department">
+      <TblOpts/>
+      <Pk ClNs="hr_m_departmentId" nm="pkhr_m_department"/>
+      <Cl au="1" df="" nm="hr_m_departmentId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="department" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_divisi">
+      <TblOpts/>
+      <Pk ClNs="hr_m_divisiId" nm="pkhr_m_divisi"/>
+      <Cl au="1" df="" nm="hr_m_divisiId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="divisi" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_emp_stat">
+      <TblOpts/>
+      <Pk ClNs="hr_m_emp_statId" nm="pkhr_m_emp_stat"/>
+      <Cl au="0" df="" nm="hr_m_emp_statId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="status_emp" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="10" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_employee">
+      <TblOpts/>
+      <Pk ClNs="hr_m_employeeId" nm="pkhr_m_employee"/>
+      <Cl au="1" df="" nm="hr_m_employeeId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="employee_id" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="8" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="name" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="150" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tgl_lahir" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tmp_lahir" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="alamat" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="250" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="kota" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="zip" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="5" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="propinsi" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="negara" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="mobile" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="telepone" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="status" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_m_employee_hr_m_kota" prLkCl="hr_m_kotaId" upAc="3">
+        <PrTb mn="0" nm="hr_m_kota" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_m_employee" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="kota" prCl="hr_m_kotaId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_m_employee_hr_m_negara" prLkCl="hr_m_negaraId" upAc="3">
+        <PrTb mn="0" nm="hr_m_negara" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_m_employee" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="negara" prCl="hr_m_negaraId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_m_employee_hr_m_propinsi" prLkCl="hr_m_propinsiId" upAc="3">
+        <PrTb mn="0" nm="hr_m_propinsi" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_m_employee" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="propinsi" prCl="hr_m_propinsiId"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_hr_m_employee_hr_m_status" prLkCl="hr_m_statusId" upAc="3">
+        <PrTb mn="0" nm="hr_m_status" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_m_employee" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="status" prCl="hr_m_statusId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_employee_photo">
+      <TblOpts/>
+      <Pk ClNs="hr_m_employee_photoId" nm="pkhr_m_employee_photo"/>
+      <Cl au="0" df="" nm="hr_m_employee_photoId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="hr_m_employeeId" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="photo" nu="0">
+        <DT arr="0" ds="BLOB" en="" id="2004" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_hr_m_employee_photo_hr_m_employee" prLkCl="hr_m_employeeId" upAc="3">
+        <PrTb mn="0" nm="hr_m_employee" oe="1" sch="dbo" zr="0"/>
+        <CdTb mn="1" nm="hr_m_employee_photo" oe="0" sch="dbo" zr="1"/>
+        <ClPr cdCl="hr_m_employeeId" prCl="hr_m_employeeId"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_family">
+      <TblOpts/>
+      <Pk ClNs="hr_m_familyId" nm="pkhr_m_family"/>
+      <Cl au="0" df="" nm="hr_m_familyId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="family_link" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_kota">
+      <TblOpts/>
+      <Pk ClNs="hr_m_kotaId" nm="pkhr_m_kota"/>
+      <Cl au="1" df="" nm="hr_m_kotaId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="kota" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_negara">
+      <TblOpts/>
+      <Pk ClNs="hr_m_negaraId" nm="pkhr_m_negara"/>
+      <Cl au="1" df="" nm="hr_m_negaraId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="negara" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_propinsi">
+      <TblOpts/>
+      <Pk ClNs="hr_m_propinsiId" nm="pkhr_m_propinsi"/>
+      <Cl au="1" df="" nm="hr_m_propinsiId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="propinsi" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="100" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_m_status">
+      <TblOpts/>
+      <Pk ClNs="hr_m_statusId" nm="pkhr_m_status"/>
+      <Cl au="0" df="" nm="hr_m_statusId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="status_nikah" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="50" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="hr_sec_user">
+      <TblOpts/>
+      <Pk ClNs="hr_sec_userId" nm="pkhr_sec_user"/>
+      <Cl au="1" df="" nm="hr_sec_userId" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="user" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="password" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="60" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="diagramA">
+    <RnCf ClkAct="true" FtSz="9" lkStgy="OffsetDirect" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="1" PkCols="1"/>
+      <ErNotation>DbwErNotation</ErNotation>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_employee" x="400" y="25"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_kota" x="808" y="66"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_propinsi" x="805" y="142"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_negara" x="825" y="244"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_d_employee_company" x="18" y="34"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_company" x="19" y="230"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_divisi" x="313" y="234"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_department" x="563" y="244"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_sec_user" x="26" y="348"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_d_employee_family" x="361" y="303"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_family" x="731" y="329"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_d_employee_experient" x="724" y="406"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_status" x="133" y="445"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_emp_stat" x="47" y="294"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_d_employee_salary" x="674" y="19"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_d_employee_potongan" x="941" y="296"/>
+    <TbGl bkCl="ffccccff" sch="dbo" tbl="hr_m_employee_photo" x="273" y="279"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_company.fk_hr_d_employee_company_hr_m_company"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_company.fk_hr_d_employee_company_hr_m_department"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_company.fk_hr_d_employee_company_hr_m_divisi"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_company.fk_hr_d_employee_company_hr_m_emp_stat"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_company.fk_hr_d_employee_company_hr_m_employee"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_experient.fk_hr_d_employee_experient_hr_m_employee"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_family.fk_hr_d_employee_family_hr_m_employee"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_family.fk_hr_d_employee_family_hr_m_family"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_potongan.fk_hr_d_employee_potongan_hr_m_employee"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_d_employee_salary.fk_hr_d_employee_salary_hr_m_employee"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_m_employee.fk_hr_m_employee_hr_m_kota"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_m_employee.fk_hr_m_employee_hr_m_negara"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_m_employee.fk_hr_m_employee_hr_m_propinsi"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_m_employee.fk_hr_m_employee_hr_m_status"/>
+    <FkGl bkCl="ff000000" nm="dbo.hr_m_employee_photo.fk_hr_m_employee_photo_hr_m_employee"/>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr NxRnmId="6">
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="dbo" SupCls="" SupNme="">
+      <Rnm id="1" nNm="hr_m_propinsi" oNm="propinsi"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="hr_m_employee" SupCls="Schema" SupNme="dbo">
+      <Rnm id="2" nNm="negara" oNm="hr_m_negaraId"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="hr_m_propinsi" SupCls="Schema" SupNme="dbo">
+      <Rnm id="3" nNm="hr_m_propinsiId" oNm="propinsiId"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="hr_m_employee" SupCls="Schema" SupNme="dbo">
+      <Rnm id="4" nNm="status" oNm="hr_m_statusId"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="hr_d_employee_salary" SupCls="Schema" SupNme="dbo">
+      <Rnm id="5" nNm="pokok" oNm="salary"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.diagramA" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+    <TreePath>/Schemas (1)</TreePath>
+    <TreePath>/Schemas (1)/dbo</TreePath>
+  </TreePaths>
+</Db>
